@@ -114,8 +114,8 @@
 					<div class="dec">
 						<h4 class="mt-30"><a href="#">Mobile Development</a></h4>
 						<p class="mt-20">
-							I develop cross-platform mobile applications with a focus on performance and user experience using Flutter
-							and Xamarin.
+							I develop cross-platform mobile applications with a focus on performance and user experience using React
+							Native &amp; Expo.
 						</p>
 					</div>
 				</div>
@@ -305,63 +305,92 @@
 	</section>
 	<!-- End Skills Area -->
 
-	<!-- Start qualification Area -->
-
-	<!-- End qualification Area -->
-
 	<!-- Start project Area -->
-	<section class="project-area section-gap" id="project">
+	<!-- Start 3D Portfolio Cards -->
+	<section class="portfolio-3d section-gap" id="project">
 		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-70 col-lg-8">
-					<div class="title text-center">
-						<h1 class="mb-10">Projects</h1>
-						<p>These are some of the projects I have done personally.<br /> Please have a look at it.</p>
+			<h2 class="section-title text-center mb-5">Projects</h2>
+			<div class="cards-grid">
+
+				<!-- TripWise -->
+				<div class="card">
+					<div class="card-inner">
+						<div class="card-front">
+							<div class="image-slider">
+								<img src="img/tw1.png" alt="TripWise">
+								<img src="img/tw.png" alt="TripWise">
+							</div>
+							<h3><a href="#">TripWise</a></h3>
+						</div>
+						<div class="card-back">
+							<p>
+								The Transport Management System is a React Native-based project designed to streamline and optimize the
+								management of transportation services. The primary goal of this project is to simplify the complexities
+								of transportation management by offering a centralized platform to handle all related operations
+							</p>
+							<a href="#" class="btn-sm">View Details</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="single-project">
-
-						<h4 class="pt-100 pb-30"><a href="#">Rateup</a></h4>
-						<p>
-							This was a passionate project for me and I had put a lot of effort to build it.<br />
-							This a like a social media. Where everyone can create an account and ask his friend to rate him<br />
-						</p>
-						<img class="img-fluid" src="img/jp.jpg" alt="">
-
+				<!-- Rateup -->
+				<div class="card">
+					<div class="card-inner">
+						<div class="card-front">
+							<img src="img/jp.jpg" alt="Rateup Screenshot">
+							<h3><a href="#">Rateup</a></h3>
+						</div>
+						<div class="card-back">
+							<p>
+								This was a passionate project for me and I had put a lot of effort to build it.
+								This is like a social media where everyone can create an account and ask friends to rate them.
+							</p>
+							<a href="#" class="btn-sm">View Details</a>
+						</div>
 					</div>
-					<div class="single-project">
-						<h4 class="pt-100 pb-30"><a href="#">Traffic Management Software</a></h4>
-						<p>
-							It is simple Traffic management system. Where police can create case, track his case.<br /> And also
-							offender can see the details of his case and get Email notification about his case<br />
-						</p>
-						<img class="img-fluid" src="img/tsm.png" alt="">
-
-					</div>
-					<div class="single-project">
-						<h4 class="pt-100 pb-30"><a href="#">University Management Software</a></h4>
-						<p>
-							I had done this project during a course.<br /> It is simple University management system.<br />
-						</p>
-
-					</div>
-
-
-					<div class="single-project">
-						<h4 class="pt-30 pb-30"><a href="#">Stock Management Software</a></h4>
-						<p class=" pb-100">
-							This project was done in 2018.<br />This is a stock management system which can be applicable in various
-							commercial sites.<br />
-						</p>
-					</div>
-
 				</div>
+
+				<!-- Traffic Management Software -->
+				<div class="card">
+					<div class="card-inner">
+						<div class="card-front">
+							<img src="img/tsm.png" alt="Traffic Management Software">
+							<h3><a href="#">Traffic Management Software</a></h3>
+						</div>
+						<div class="card-back">
+							<p>
+								A simple traffic management system where police can create and track cases.
+								Offenders can view case details and receive email notifications.
+							</p>
+							<a href="#" class="btn-sm">View Details</a>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Dormitory MS -->
+				<div class="card">
+					<div class="card-inner">
+						<div class="card-front">
+							<!-- add your actual Stock project image into img/stock.png -->
+							<img src="img/dms.png" alt="Stock Management Software">
+							<h3><a href="#">Dormitory MS</a></h3>
+						</div>
+						<div class="card-back">
+							<p>
+								Completed in 2018, this stock management system can be applied across
+								various commercial sites to track inventory and sales.
+							</p>
+							<a href="#" class="btn-sm">View Details</a>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</section>
+	<!-- End 3D Portfolio Cards -->
+
+
 	<!-- End project Area -->
 
 
@@ -379,7 +408,7 @@
 				<div class="col-lg-6 col-md-6 qty-left">
 					<div class="single-qly">
 						<h3 class="text-uppercase">Phone</h3>
-						<p><span class="lnr lnr-phone"></span> +88 01815593582</p>
+						<p><span class="lnr lnr-phone"></span> +880 1730402723</p>
 
 
 					</div>
@@ -644,6 +673,18 @@
 			const c = 2 * Math.PI * r;
 			circle.style.strokeDasharray = c;
 			circle.style.strokeDashoffset = (c * (1 - pct)).toFixed(2);
+		});
+
+		// slider for images
+		document.querySelectorAll('.image-slider').forEach(slider => {
+			const slides = slider.querySelectorAll('img');
+			let idx = 0;
+			slides[idx].classList.add('active');
+			setInterval(() => {
+				slides[idx].classList.remove('active');
+				idx = (idx + 1) % slides.length;
+				slides[idx].classList.add('active');
+			}, 3000);  // change every 3 seconds
 		});
 	</script>
 
