@@ -2724,6 +2724,88 @@ h6 {
   margin: 0;
 }
 
+/* Socila Icons */
+.single-footer-widget .social-icons {
+  display: flex;
+  position: absolute;
+  top: 65%;
+  left: 36%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  /* reset default ul padding */
+  margin: 0;
+  /* reset default ul margin */
+}
+
+.single-footer-widget .social-icons li {
+  list-style: none;
+}
+
+.single-footer-widget .social-icons li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.single-footer-widget .social-icons li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+.single-footer-widget .social-icons li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.single-footer-widget .social-icons li a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.single-footer-widget .social-icons li a:hover::before {
+  top: 0;
+}
+
+.single-footer-widget .social-icons li:nth-child(1) a::before {
+  background: #3b5999;
+  /* facebook blue */
+}
+
+.single-footer-widget .social-icons li:nth-child(2) a::before {
+  background: #55acee;
+  /* twitter blue */
+}
+
+.single-footer-widget .social-icons li:nth-child(3) a::before {
+  background: #0077b5;
+  /* linkedin blue */
+}
+
+.single-footer-widget .social-icons li:nth-child(4) a::before {
+  background: #140e0e;
+  /* google plus red */
+}
+
+
 
 /* --- Skills Area --- */
 .skills-area {
