@@ -2805,6 +2805,54 @@ h6 {
   /* google plus red */
 }
 
+/* Smaller icon circles on narrow viewports */
+@media (max-width: 576px) {
+  .single-footer-widget .social-icons {
+    top: 110%;
+    left: 50%;
+  }
+
+  .single-footer-widget .social-icons li a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 28px;
+    margin: 0 6px;
+    border-width: 2px;
+  }
+}
+
+/* Medium tablets */
+@media (min-width: 577px) and (max-width: 767px) {
+  .single-footer-widget .social-icons {
+    top: 110%;
+    left: 50%;
+  }
+
+  .single-footer-widget .social-icons li a {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 32px;
+    margin: 0 8px;
+  }
+}
+
+/* Larger tablets / small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .single-footer-widget .social-icons {
+    top: 110%;
+    left: 50%;
+  }
+
+  .single-footer-widget .social-icons li a {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    font-size: 33px;
+    margin: 0 9px;
+  }
+}
 
 
 /* --- Skills Area --- */
