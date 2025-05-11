@@ -22,6 +22,7 @@
 			CSS
 			============================================= -->
 	<link rel="stylesheet" href="css/linearicons.css">
+
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
@@ -251,7 +252,7 @@
 			<div class="row">
 				<!-- Radar Chart -->
 				<div class="col-md-6 text-center">
-					<h4>Programming Languages</h4>
+					<h4 class="mb-20">Programming Languages</h4>
 					<canvas id="languagesRadar"></canvas>
 				</div>
 				<!-- SVG Badges -->
@@ -266,7 +267,7 @@
 							<i class="fab fa-microsoft"></i>
 							<span>.NET</span>
 						</div>
-						<div class="badge-item" data-percent="65">
+						<div class="badge-item" data-percent="75">
 							<svg viewBox="0 0 100 100">
 								<circle class="bg" cx="50" cy="50" r="45" />
 								<circle class="progress" cx="50" cy="50" r="45" />
@@ -274,7 +275,7 @@
 							<i class="fab fa-angular"></i>
 							<span>Angular</span>
 						</div>
-						<div class="badge-item" data-percent="70">
+						<div class="badge-item" data-percent="48">
 							<svg viewBox="0 0 100 100">
 								<circle class="bg" cx="50" cy="50" r="45" />
 								<circle class="progress" cx="50" cy="50" r="45" />
@@ -282,7 +283,23 @@
 							<i class="fab fa-react"></i>
 							<span>React</span>
 						</div>
-						<div class="badge-item" data-percent="55">
+						<div class="badge-item" data-percent="80">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45" />
+								<circle class="progress" cx="50" cy="50" r="45" />
+							</svg>
+							<i class="fa fa-database"></i>
+							<span>Oracle</span>
+						</div>
+						<div class="badge-item" data-percent="80">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45" />
+								<circle class="progress" cx="50" cy="50" r="45" />
+							</svg>
+							<i class="fa fa-book"></i>
+							<span>Entity_Framework</span>
+						</div>
+						<div class="badge-item" data-percent="60">
 							<svg viewBox="0 0 100 100">
 								<circle class="bg" cx="50" cy="50" r="45" />
 								<circle class="progress" cx="50" cy="50" r="45" />
@@ -290,7 +307,7 @@
 							<i class="fab fa-docker"></i>
 							<span>Docker</span>
 						</div>
-						<div class="badge-item" data-percent="78">
+						<div class="badge-item" data-percent="90">
 							<svg viewBox="0 0 100 100">
 								<circle class="bg" cx="50" cy="50" r="45" />
 								<circle class="progress" cx="50" cy="50" r="45" />
@@ -298,9 +315,37 @@
 							<i class="fa fa-book"></i>
 							<span>SignalR</span>
 						</div>
+						<div class="badge-item" data-percent="75">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45" />
+								<circle class="progress" cx="50" cy="50" r="45" />
+							</svg>
+							<i class="fas fa-server"></i>
+							<span>Redis</span>
+						</div>
+						<div class="badge-item" data-percent="75">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45" />
+								<circle class="progress" cx="50" cy="50" r="45" />
+							</svg>
+							<i class="fas fa-satellite-dish"></i>
+							<span>OpenTelemetry</span>
+						</div>
+						<div class="badge-item" data-percent="75">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45" />
+								<circle class="progress" cx="50" cy="50" r="45" />
+							</svg>
+							<i class="fa fa-book"></i>
+							<span>Grafana</span>
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
+		</div>
+		</div>
 		</div>
 	</section>
 	<!-- End Skills Area -->
@@ -417,7 +462,7 @@
 				<div class="col-lg-6 col-md-6 qty-right">
 					<div class="single-qly">
 						<h3 class="text-uppercase">Email</h3>
-						<p><span class="lnr lnr-envelope"></span> eliashridoy.cse@gmail.com</p>
+						<p><span class="lnr lnr-envelope"></span> eliashridoy@outlook.com</p>
 
 					</div>
 					<!--<div class="btm-border d-block mx-auto"></div>
@@ -622,29 +667,41 @@
 	<script src="js/vendor/bootstrap.min.js"></script>
 	<script src="js/jquery.ajaxchimp.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/parallax.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-
 	<script src="js/main.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.2/chart.umd.js" integrity="sha512-..."
 		crossorigin="anonymous"></script>
 	<script>
+		// Radar Chart
+		function randomColor(opacity = 0.6) {
+			const r = Math.floor(Math.random() * 256);
+			const g = Math.floor(Math.random() * 256);
+			const b = Math.floor(Math.random() * 256);
+			return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+		}
+		const labels = ['C#', 'JS/TS', 'SQL', 'Python', 'Bash', 'C++'];
+		const data = [90, 78, 87, 60, 55, 79];
+		// one background fill color per point (semi-transparent)
+		const bgColors = labels.map(() => randomColor(0.2));
+		// one border/point color per point (opaque)
+		const pointColors = labels.map(() => randomColor(1));
+
 		const ctx = document.getElementById('languagesRadar').getContext('2d');
 		new Chart(ctx, {
 			type: 'radar',
 			data: {
-				labels: ['C#', 'Python', 'JS/TS', 'SQL', 'Bash'],
+				labels,
 				datasets: [{
 					label: 'Proficiency (%)',
-					data: [90, 60, 87, 80, 55],
-					borderColor: '#8490ff',
-					backgroundColor: 'rgba(132,144,255,0.2)',
-					pointBackgroundColor: '#8490ff',
+					data,
+					// now an array instead of a single string:
+					backgroundColor: bgColors,
+					borderColor: pointColors,
+					pointBackgroundColor: pointColors,
 					pointBorderColor: '#fff',
 					pointHoverBackgroundColor: '#fff',
-					pointHoverBorderColor: '#8490ff'
+					pointHoverBorderColor: pointColors
 				}]
 			},
 			options: {
@@ -660,8 +717,9 @@
 						ticks: { stepSize: 20 }
 					}
 				},
-				elements: { line: { borderWidth: 2 } },
-				plugins: { legend: { display: false } }
+				plugins: {
+					legend: { display: false }
+				}
 			}
 		});
 
@@ -685,6 +743,28 @@
 				idx = (idx + 1) % slides.length;
 				slides[idx].classList.add('active');
 			}, 3000);  // change every 3 seconds
+		});
+		// 1. Helper to pick a random hex color
+		function randomHexColor() {
+			return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
+		}
+
+		// 2. Animate & colorize SVG badges
+		document.querySelectorAll('.badge-item').forEach(el => {
+			const pct = +el.dataset.percent / 100;
+			const circle = el.querySelector('.progress');
+			const r = circle.r.baseVal.value;
+			const c = 2 * Math.PI * r;
+
+			// stroke length & offset
+			circle.style.strokeDasharray = c;
+			circle.style.strokeDashoffset = (c * (1 - pct)).toFixed(2);
+
+			// assign a random color
+			const color = randomHexColor();
+			circle.style.stroke = color;
+			el.querySelector('i').style.color = color;
+			el.querySelector('span').style.color = color;
 		});
 	</script>
 
