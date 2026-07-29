@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "next build && gh-pages -d out -b gh-pages"
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -b gh-pages --dotfiles"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",
